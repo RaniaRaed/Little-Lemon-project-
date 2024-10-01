@@ -1,0 +1,314 @@
+/* Resetting default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in total width and height */
+}
+
+/* Body styles */
+body {
+    background-color: #f8f8f8; /* Light background for a clean look */
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #333; /* Dark color for text readability */
+    margin: 0 auto;
+    max-width: 1200px; /* Limits width of the body for large screens */
+    padding: 0 2rem; /* Padding for smaller screens */
+}
+
+/* Header styles */
+header {
+    text-align: center; /* Center-aligns header text */
+    margin: 2rem 0; /* Margin above and below header */
+}
+
+header > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Centering the header image */
+}
+
+header img {
+    max-width: 100%; /* Ensures image fits within the header */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none; /* Removes default list styling */
+    text-align: center; /* Center-aligns navigation items */
+    font-size: 1.2rem;
+    padding-inline-start: 0rem;
+    margin-top: 1rem;
+    background-color: dimgray; /* Background color for navigation */
+    border-radius: 0.5rem; /* Rounded corners for navigation */
+}
+
+nav ul li {
+    display: inline-block; /* Displays list items inline */
+    margin: 0.5rem; /* Margin between navigation items */
+}
+
+nav ul a {
+    text-decoration: solid; /* Solid underline style */
+    color: #c83920 ; /* Text color for navigation links */
+    margin: 0.2rem; /* Margin between navigation items */
+    font-weight: bold; /* Bold text for navigation links */
+}
+
+nav ul a:hover {
+    text-decoration: solid; /* Underline style on hover */
+    text-decoration-thickness: 0.1rem; /* Thickness of underline on hover */
+    color: rgb(7, 7, 170); /* Color for hover effect */
+}
+
+/* Main content styles */
+main {
+    margin-bottom: 3rem; /* Space below the main content */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically by default */
+    gap: 1.5rem; /* Space between sections */
+}
+
+/* Container styles */
+.container {
+    position: relative; /* Needed for absolute positioning of .top */
+    background-image: url(../pasta.jpg); /* Ensure correct path to the image */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-size: cover; /* Cover the entire container */
+    height: 200px; /* Reduced height for the top section */
+    border-radius: 0.5rem; /* Increased border-radius for rounded corners */
+    padding: 1.5rem; /* Padding inside the container */
+    margin-top: 1.3rem; /* Space above the container */
+    transition: transform 0.3s ease, height 0.3s ease; /* Smooth transition effect */
+    overflow: hidden; /* Prevents content from spilling out */
+}
+
+.container:hover {
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transform: scale(1.03); /* Scales the container on hover */
+    transition: transform 0.3s ease; /* Only scale the element, don't change height */
+}
+
+/* Top section styles */
+.top {
+    position: absolute; /* Overlay the top section on the background image */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Reduced background color */
+    backdrop-filter: blur(1px); /* Reduced blur effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 1rem; /* Adjusted padding */
+    color: whitesmoke; /* Text color */
+    text-align: right; /* Align text to the right */
+    padding: 1.5rem; /* Additional padding */
+    border-radius: inherit; /* Ensures the blur matches the container's shape */
+    transition: all 0.3s ease; /* Smooth hover effects */
+    max-height: 100%; /* Prevents top section from growing beyond container */
+    overflow: hidden; /* Ensure content stays within bounds */
+}
+
+.top h1 {
+    color: #ffffff; /* Change heading color to white */
+    font-size: 2rem; /* Adjusted font size */
+    text-align: left; /* Align heading to the left */
+    margin-bottom: 0.5rem; /* Space below the heading */
+}
+
+.top p {
+    
+    color: #ffffff; /* Change paragraph text color to white */
+    text-align: left; /* Align paragraph text to the left */
+    font-size: 1rem; /* Font size for paragraph */
+    line-height: 1.2; /* Line height for paragraph */
+    margin-bottom: 0.5rem;  /* Space below the paragraph */
+    margin-top: auto;
+}
+
+/* Hover effect for the top section */
+.top:hover {
+    transform: none; /* Disable scaling effect on the .top itself */
+    background-color: rgba(0, 0, 0, 0.5); /* Darker background on hover */
+}
+
+/* Remove extra space between navigation and container */
+nav {
+    margin-bottom: 0; /* Remove margin below navigation */
+}
+
+/* Horizontal sections container */
+.horizontal-sections {
+    display: flex;
+    flex-wrap: wrap; /* Wraps sections if the screen size is too small */
+    gap: 2rem; /* Space between items */
+    justify-content: space-between; /* Space between the sections */
+}
+
+/* Centering the list in the opening hours section */
+.hours-section ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    text-align: center; /* Center align the text */
+    margin-top: 1rem; /* Add some space above the list */
+}
+
+
+/* Styling for individual sections */
+.promo-section, .reservation-section, .hours-section {
+    flex: 1 1 calc(33.33% - 2rem); /* Each card takes up 1/3 of the space minus the gap */
+    background-color: #fff; /* White background for each article */
+    padding: 1.5rem; /* Padding inside each card */
+    border-radius: 0.5rem; /* Rounded corners for cards */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.2s ease-in-out; /* Transition for hover effect */
+    display: flex; /* Flex container for card content */
+    flex-direction: column; /* Stack card content vertically */
+    height: auto; /* Let height adjust based on content */
+}
+
+/* Ensures all cards stretch to the tallest card */
+.horizontal-sections {
+    align-items: stretch; /* Stretch items to match the height of the tallest item */
+}
+
+/* Hover effect on sections */
+.promo-section:hover, .reservation-section:hover, .hours-section:hover {
+    transform: scale(1.02); /* Subtle zoom effect on hover */
+}
+
+/* Headings styles */
+h1, h2 {
+    color: #c83920; /* Tomato color for headings */
+    margin-bottom: 1rem; /* Space below headings */
+}
+
+h1 {
+    font-size: 3rem; /* Font size for main headings */
+}
+
+h2 {
+    font-size: 2rem; /* Font size for subheadings */
+    margin-top: 2rem; /* Space above subheadings */
+}
+
+/* Images inside articles */
+article {
+    flex: 1rem; /* Flex item for articles */
+    border-radius: 1rem; /* Rounded corners for articles */
+}
+
+article img {
+    max-width: 100%; /* Ensures images fit within the article */
+    border-radius: 0.5rem; /* Rounded corners for images */
+    margin-top: 0rem; /* Space above images */
+    margin-bottom: 0.5rem; /* Space below images */
+}
+
+/* Paragraphs inside articles */
+article p {
+    margin-top: 0.5rem; /* Space above paragraphs */
+    margin-bottom: 1rem; /* Space below paragraphs */
+    text-align: justify; /* Justifies paragraph text */
+    color: #666; /* Darker color for paragraph text */
+}
+
+/* List inside opening hours section */
+article ul {
+    list-style: none; /* Removes bullet points from list */
+    align-items: center; /* Align items in the list */
+    padding-left: 0; /* Remove padding on the left */
+    margin-top: 2rem; /* Space above the list */
+}
+
+article ul li {
+    margin-bottom: 0.5rem; /* Space below list items */
+    font-weight: bold; /* Bold text for list items */
+    color: #333; /* Darker color for list items */
+}
+
+/* Hover effect for articles */
+article:hover { 
+    background-color: #c6a67e; /* Background color on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transform: scale(1.03); /* Scale effect on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Main article styling */
+main article {
+    background-color: bisque; /* Background color for main articles */
+    padding-left: 1rem; /* Padding on the left */
+    padding-right: 1rem; /* Padding on the right */
+}
+/* Footer */
+footer {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space items evenly */
+    color: #090808; /* Text color */
+    padding: 1rem 2rem; /* Adjust padding for more spacing */
+    margin-top: 3rem; /* Space above footer */
+    background-color: #f8f8f8; /* Background color for the footer */
+    border-top: 1px solid #ccc; /* Add a top border for separation */
+}
+
+footer div {
+    display: flex; /* Ensure that the contents are flex items */
+    flex-direction: column; /* Stack items vertically */
+}
+
+footer img {
+    max-width: 50px; /* Adjust this value to make the image smaller */
+    height: auto; /* Keep aspect ratio */
+    margin-bottom: 0.5rem; /* Reduced bottom margin */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    align-self: flex-start; /* Align paragraph to the left */
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        height: 200px; /* Reduce height for smaller screens */
+        padding: 1rem; /* Padding for smaller screens */
+    }
+
+    .top {
+        padding: 1rem; /* Reduced padding for smaller screens */
+    }
+
+    .top h1 {
+        font-size: 1.5rem; /* Smaller font size for smaller screens */
+    }
+
+    .top p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        height: 150px; /* Further reduce height for mobile screens */
+        padding: 0.5rem; /* Further reduce padding */
+    }
+
+    .top {
+        padding: 0.5rem; /* Further reduce padding */
+    }
+
+    .top h1 {
+        font-size: 1.2rem; /* Smaller font size for very small screens */
+    }
+
+    .top p {
+        font-size: 0.9rem; /* Smaller font size for very small screens */
+    }
+}
